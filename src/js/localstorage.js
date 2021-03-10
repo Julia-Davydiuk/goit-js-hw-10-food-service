@@ -7,6 +7,7 @@ const Theme = {
   const checkboxRef = document.querySelector('#theme-switch-toggle');
 
   checkboxRef.addEventListener('change', toggleCheckbox);
+ 
 
 function toggleCheckbox() {
   if (checkboxRef.checked) {
@@ -23,7 +24,9 @@ function toggleCheckbox() {
  renewalTheme();
 
 function renewalTheme() {
+  bodyRef.classList.add(Theme.LIGHT);
   if (localStorage.getItem('theme') === Theme.DARK) {
+    bodyRef.classList.remove(Theme.LIGHT)
     bodyRef.classList.add(Theme.DARK);
     checkboxRef.checked = true;
   }
